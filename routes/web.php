@@ -9,10 +9,10 @@ Route::get('/dashboard', function () {
     return view('surat-masuk.dashboard');
 })->name('dashboard');
 
-// Surat Masuk
-Route::get('/surat-masuk', [SuratMasukController::class, 'index'])->name('surat-masuk.index');
-Route::get('/surat-masuk/{id}', [SuratMasukController::class, 'show'])->name('surat-masuk.show');
+// Surat Masuk (P4: resource route CRUD)
+Route::resource('surat-masuk', SuratMasukController::class)
+    ->parameters(['surat-masuk' => 'id']);
 
-// Surat Keluar
-Route::get('/surat-keluar', [SuratKeluarController::class, 'index'])->name('surat-keluar.index');
-Route::get('/surat-keluar/{id}', [SuratKeluarController::class, 'show'])->name('surat-keluar.show');
+// Surat Keluar (Latihan mandiri P4: resource route CRUD)
+Route::resource('surat-keluar', SuratKeluarController::class)
+    ->parameters(['surat-keluar' => 'id']);
