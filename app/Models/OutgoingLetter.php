@@ -6,8 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class OutgoingLetter extends Model
 {
-    protected $fillable = [
-        'nomor_surat', 'tanggal', 'tujuan',
-        'perihal', 'keterangan',
-    ];
+    // Belum memerlukan konfigurasi tambahan pada P3.
 }
